@@ -14,6 +14,13 @@
     <maven.deploy.skip>true</maven.deploy.skip>
     <signer.version>8.0.1</signer.version>
   </properties>
+  <distributionManagement>
+  <repository>
+    <id>talend-custom-libs</id>
+    <name>Talend Custom Libraries Repository</name>
+    <url>http://localhost:8082/repository/talend-releases/</url>
+  </repository>
+</distributionManagement>
   <build>
     <pluginManagement>
       <plugins>
@@ -25,6 +32,11 @@
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.6.1</version>
           <dependencies>
+		  <dependency>
+  <groupId>org.apache.commons</groupId>
+  <artifactId>commons-lang3</artifactId>
+  <version>3.11</version>
+</dependency>
             <dependency>
               <groupId>org.apache.maven.shared</groupId>
               <artifactId>maven-shared-utils</artifactId>
